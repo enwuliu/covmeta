@@ -84,8 +84,8 @@ cov_meta<- function(b1=NULL,
 
   }
 
-  fixed_effect_meta_r<-function(v1,v2,cov12,sample_size,n_studies){
-    r<-cov12/sqrt(v1*v2)                   #correlation coefficient
+  fixed_effect_meta_r<-function(v1,v2,cov_b11b2,sample_size){
+    r<-cov_b1b2/sqrt(v1*v2)                   #correlation coefficient
     z<-0.5*log((1+r)/(1-r))                #Fisher z transformation
     v<-1/(sample_size-3)                   #variance for z
     W<-1/v                                 #weight
